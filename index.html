@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/loaders.css" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css" />
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-  </head>  
+  </head>
   <body>
     
     <div class="loader"><div class="ball-scale"><div></div></div></div>
@@ -27,108 +27,172 @@
     <div id="wrapper" class="fade_off">
       <header>
 
-        <h1 class="headerIn js-rellax" data-rellax-speed="0" data-rellax-zindex="2">
-          <img src="img/h1_title.png" width="auto" height="auto" alt="たつのこセレクション">
-        </h1>
+        <div class="headerIn">
+          <h1 class="js-rellax" data-rellax-speed="0" data-rellax-zindex="2">
+            <img src="img/h1_title.png" width="auto" height="600" alt="たつのこセレクション">
+          </h1>
+        </div>
         
-        <h2  class="js-rellax" data-rellax-speed="0" data-rellax-zindex="2">
-          あなたが好きな歌を、<br>一日一回のみ投票可。
+        <h2  class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
+          <p>あなたが好きな歌を、<br>一日一回のみ投票可。</p>
         </h2>
   
       </header>
   
       <main>
-        <section id="rank" class="js-rellax" data-rellax-speed="0" data-rellax-zindex="2">
-          <h3>現在の順位</h3>
-          <div class="top3 fade fade_off">
-            <dl class="ranking">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-          </div>
-  
-          <div class="under_rank">
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
-            <dl class="ranking fade fade_off">
-              <dt>Weather Hackers / 桐生ココ</dt>
-              <dd>1000票</dd>
-            </dl>
+        <section id="rank" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
+          <div class="rankIn">
+            <h3>現在の順位</h3>
+            <div class="top3 fade fade_off">
+              <dl class="ranking">
+                <dd>1000票</dd>
+                <dt>
+                  <h4>Santa Claus is coming to town</h4>
+                  <p>マイケル・ブーブレ</p>
+                </dt>
+              </dl>
+              <dl class="ranking">
+                <dd>1000票</dd>
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+              </dl>
+              <dl class="ranking">
+                <dd>1000票</dd>
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+              </dl>
+            </div>
+    
+            <div class="under_rank">
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+              <dl class="ranking fade fade_off">                
+                <dt>
+                  <h4>Weather Hackers</h4>
+                  <p>桐生ココ</p>
+                </dt>
+                <dd>1000票</dd>
+              </dl>
+            </div>
           </div>
         </section>
   
   
-        <section id="comment" class="js-rellax" data-rellax-speed="0" data-rellax-zindex="2">
+        <section id="comment" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
           <h3>コメント</h3>
           <div class="commentIn">
             <p class="fade fade_off">テストコメントです。</p>
@@ -145,7 +209,7 @@
         </section>
 
 
-        <section id="form">
+        <section id="form" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
           <h3>投票所</h3>
           <div class="formIn fade fade_off">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJIoErY7HCYFly2-naPD8YwSMQ9_Tej5EYDhOxVkV5i-oEkg/viewform?embedded=true" width="800" height="600" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>

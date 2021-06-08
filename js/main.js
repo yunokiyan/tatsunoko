@@ -2,7 +2,7 @@ var rellax = new Rellax('.js-rellax');
 
 $(function() {
 
-  var timeout = 1000;
+  var timeout = 0;
 
   setTimeout(function(){
     $(".loader").hide();
@@ -14,7 +14,7 @@ $(function() {
         clearInterval(canvas);
         setTimeout(function(){
           $("#wrapper").addClass("fade_on");
-        },500)
+        },timeout/2)
       }
     },5);
   },timeout);
@@ -33,7 +33,7 @@ function fade_on(){
       if (scroll > imgPos - windowHeight + windowHeight/5){
         $(this).addClass("fade_on");
       } else {
-        //$(this).removeClass("fade_on");
+        $(this).removeClass("fade_on");
       }
     });
   });

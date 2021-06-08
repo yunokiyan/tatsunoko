@@ -6,16 +6,13 @@ html,body{
   height:100%;
   padding:0px;
   margin:0px;
-
-  background: url(../img/bg_daimon.png) no-repeat center top,url(../img/bg.png) repeat left top;
-  background-size: cover,200px;
+  background: url(../img/bg_daimon2.png) no-repeat center bottom 0,url(../img/bg.png) repeat left top;
+  background-size: 55%,200px;
   background-attachment: fixed,fixed;
-
-  /* background: url(../img/bg.png) repeat left top;
-  background-size: 200px;
-  background-attachment: fixed; */
-
   text-align: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.05em;
 }
 
 body:after{
@@ -24,10 +21,10 @@ body:after{
   right: -89px;
   bottom: -70px;
   background: url(../img/bg_baloon_2.png) no-repeat left top;
-  background-size: 670px;
-  width: 670px;
-  height: 520px;
-  z-index: 3;
+  background-size: 400px;
+  width: 400px;
+  height: 420px;
+  z-index: 1;
 }
 
 #wrapper{
@@ -36,7 +33,6 @@ body:after{
 }
 
 section{
-  width: 1200px;
   margin: 0 auto;
 }
 
@@ -65,15 +61,21 @@ section{
 /* header
 ================================================= */
 header{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header .headerIn{
   width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
-header h1{
-  color: #fff;
+header .headerIn h1{
   width: 1200px;
-  height: 1200px;
+  height: 800px;
+  color: #fff;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -82,12 +84,48 @@ header h1{
 
 header h2{
   width: 100%;
-  padding: 200px 0 300px;
+  padding: 30px;
+  margin: 200px 0 300px;
   font-family: 'Noto Serif JP', serif;
   font-size: 4rem;
   line-height: 6rem;
   font-weight: 500;
   color: #fff;
+  background: rgb(45 32 6);
+  position: relative;
+}
+
+header h2 p{
+  position: relative;
+  display: inline-block;
+}
+
+header h2 p:before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -150px;
+  margin-top: -20px;
+  background: url(../img/icon_rank_w.svg) no-repeat center;
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+  padding-top: 26px;
+  box-sizing: border-box;
+}
+
+header h2 p:after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -150px;
+  margin-top: -20px;
+  background: url(../img/icon_rank_w.svg) no-repeat center;
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+  padding-top: 26px;
+  box-sizing: border-box;
 }
 
 
@@ -111,35 +149,53 @@ footer{
 
 main{
   width: 100%;
-  overflow: hidden;
 }
 
 main section{
   width: 1200px; 
   counter-reset: number 0;
   margin-bottom:200px;
+  padding-left: 170px;
 }
 
 main section h3{
   font-family: 'Noto Serif JP', serif;
-  font-size: 3rem;
-  line-height: 4.5rem;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 5rem;
   color: #fff;
   margin-bottom: 100px;
-  border: 1px solid #fff;
-  padding: 30px;
+  /* border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.2); */
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
 }
 
-main section dl.ranking{
-  background: rgba(255,255,255,.9);
-  padding: 50px;
+main section h3:before{
+  content: "";
+  position: absolute;
+  left: 60px;
+  bottom: -40px;
+  background: url(../img/bg_baloon.png) no-repeat left top;
+  background-size: 70px;
+  width: 70px;
+  height: 70px;
+  z-index: 3;
 }
 
 main section dl:before {
   counter-increment: number 1;
   content: counter(number) "位";
-  font-size: 2rem;
+}
+
+main section#rank{
+}
+
+main section#rank .rankIn{
+  margin: 0px auto;
 }
 
 /* top3 */
@@ -150,12 +206,28 @@ main section .top3{
   margin-bottom: 50px;
 }
 
-main section .top3 dl.ranking{
-  margin-right: 40px;
+main section .top3 dl:before{
+  font-size: 1.8rem;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: -25px;
+  left: -20px;
+  background: url(../img/icon_rank.svg) no-repeat center;
+  background-size: 90px 90px;
+  width: 90px;
+  height: 90px;
+  padding-top: 26px;
+  box-sizing: border-box;
 }
 
 main section .top3 dl.ranking{
-  margin-right: 40px;
+  padding: 50px;
+  margin-right: 50px;
+  background: #fff url(../img/bg_rank.jpg) repeat left top;
+  border-radius: 5px;
+  position: relative;
+  width: 33%;
 }
 
 main section .top3 dl.ranking:last-child{
@@ -163,33 +235,92 @@ main section .top3 dl.ranking:last-child{
 }
 
 main section .top3 dl.ranking dt{
-  font-size: 2rem;
   margin-bottom: 10px;
-  font-weight: normal;
+}
+
+main section .top3 dl.ranking dt h4{
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+main section .top3 dl.ranking dt p{
+  font-size: 1rem;
 }
 
 main section .top3 dl.ranking dd{
-  font-size: 2rem;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.2);
 }
 
 
 /* under rank */
-main section .under_rank dl:before{
-  font-size: 1.3rem;
+
+main section .under_rank{
+  background: #fff url(../img/bg_rank.jpg) repeat left top;
+  border-radius: 5px;
+  padding: 70px;
 }
 
 main section .under_rank dl{
   display: flex;
-  padding: 20px;
-  font-size: 1.3rem;
+  padding: 30px 30px 30px 100px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.2);
+  position: relative;
 }
 
-main section .under_rank dl:nth-child(even){
-  background: rgba(204,204,204,.9);
+main section .under_rank dl:last-child{
+  border-bottom: none;
+}
+
+main section .under_rank dl:before{
+  font-size: 1.1rem;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -30px;
+  background: url(../img/icon_rank.svg) no-repeat center;
+  background-size: 60px 60px;
+  width: 60px;
+  height: 60px;
+  padding-top: 18px;
+  box-sizing: border-box;
 }
 
 main section .under_rank dl dt{
-  font-weight: normal;
+  text-align: left;
+  display: flex;
+}
+
+main section .under_rank dl dt h4{
+  width: 400px;
+}
+
+main section .under_rank dl dt p{
+  width: 200px;
+}
+
+main section .under_rank dl dd{
+  width: 200px;
+  font-size: 1.3rem;
+}
+
+main section .under_rank dl:nth-child(odd){
+  background: transparent;
+}
+
+main section .under_rank dl:nth-child(even){
+  background: transparent;
+  /* background: rgba(204,204,204,.9); */
+}
+
+main section .under_rank dl dt{
+  
 }
 
 /* comment */
@@ -201,12 +332,13 @@ main section#comment p{
   font-size: 1.3rem;
   color: #fff;
   text-align: left;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   padding: 50px 0;
-  width: 85%;
   text-align: left;
   display: inline-block;
+  width: 100%;
 }
+
 
 /* form */
 main section#form{
@@ -216,12 +348,12 @@ main section#form{
 }
 
 main section#form .formIn{
-  background: #fff;
-  width: 900px;
   text-align: center;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 80px 0 50px;
   position: relative;
+  background: #fff url(../img/bg_rank.jpg) repeat left top;
+  border-radius: 5px;
 }
 
 /* Javascript
