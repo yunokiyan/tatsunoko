@@ -1,0 +1,253 @@
+/* common
+================================================= */
+
+html,body{
+  width:100%; 
+  height:100%;
+  padding:0px;
+  margin:0px;
+
+  background: url(../img/bg_daimon.png) no-repeat center top,url(../img/bg.png) repeat left top;
+  background-size: cover,200px;
+  background-attachment: fixed,fixed;
+
+  /* background: url(../img/bg.png) repeat left top;
+  background-size: 200px;
+  background-attachment: fixed; */
+
+  text-align: center;
+}
+
+body:after{
+  content: "";
+  position: fixed;
+  right: -89px;
+  bottom: -70px;
+  background: url(../img/bg_baloon_2.png) no-repeat left top;
+  background-size: 670px;
+  width: 670px;
+  height: 520px;
+  z-index: 3;
+}
+
+#wrapper{
+  position: relative;
+  z-index: 2;
+}
+
+section{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#projector {
+  position: fixed; 
+  top: 0px;
+  left: 0px;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  opacity: 0;
+} 
+
+.loader{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  margin-left: -23px;
+}
+
+.line-scale,.ball-scale{
+  transform: scale(2);
+}
+
+/* header
+================================================= */
+header{
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header h1{
+  color: #fff;
+  width: 1200px;
+  height: 1200px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+}
+
+header h2{
+  width: 100%;
+  padding: 200px 0 300px;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 4rem;
+  line-height: 6rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+
+/* footer
+================================================= */
+
+footer{
+  width: 100%;
+  /* height: 500px; */
+  /* background: rgba(0,0,0,1); */
+  text-align: center;
+  padding: 100px 0;
+  color: #fff;
+  margin: 0 auto 0px;
+  position: relative;
+}
+
+
+/* main
+================================================= */
+
+main{
+  width: 100%;
+  overflow: hidden;
+}
+
+main section{
+  width: 1200px; 
+  counter-reset: number 0;
+  margin-bottom:200px;
+}
+
+main section h3{
+  font-family: 'Noto Serif JP', serif;
+  font-size: 3rem;
+  line-height: 4.5rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 100px;
+  border: 1px solid #fff;
+  padding: 30px;
+}
+
+main section dl.ranking{
+  background: rgba(255,255,255,.9);
+  padding: 50px;
+}
+
+main section dl:before {
+  counter-increment: number 1;
+  content: counter(number) "位";
+  font-size: 2rem;
+}
+
+/* top3 */
+
+main section .top3{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+main section .top3 dl.ranking{
+  margin-right: 40px;
+}
+
+main section .top3 dl.ranking{
+  margin-right: 40px;
+}
+
+main section .top3 dl.ranking:last-child{
+  margin-right: 0;
+}
+
+main section .top3 dl.ranking dt{
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+main section .top3 dl.ranking dd{
+  font-size: 2rem;
+}
+
+
+/* under rank */
+main section .under_rank dl:before{
+  font-size: 1.3rem;
+}
+
+main section .under_rank dl{
+  display: flex;
+  padding: 20px;
+  font-size: 1.3rem;
+}
+
+main section .under_rank dl:nth-child(even){
+  background: rgba(204,204,204,.9);
+}
+
+main section .under_rank dl dt{
+  font-weight: normal;
+}
+
+/* comment */
+main section#comment{
+  text-align: center;
+}
+
+main section#comment p{
+  font-size: 1.3rem;
+  color: #fff;
+  text-align: left;
+  border-bottom: 1px solid #fff;
+  padding: 50px 0;
+  width: 85%;
+  text-align: left;
+  display: inline-block;
+}
+
+/* form */
+main section#form{
+  text-align: center;
+  position: relative;
+  margin-bottom: 0;
+}
+
+main section#form .formIn{
+  background: #fff;
+  width: 900px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 0;
+  position: relative;
+}
+
+/* Javascript
+=========================================================*/
+.fade_off {
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  transform: translateY(30px);
+}
+
+.fade_on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeup {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
