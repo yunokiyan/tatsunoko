@@ -143,6 +143,9 @@ footer{
   position: relative;
 }
 
+footer br{
+  display: none;
+}
 
 /* main
 ================================================= */
@@ -356,6 +359,7 @@ main section#form .formIn{
   border-radius: 5px;
 }
 
+
 /* Javascript
 =========================================================*/
 .fade_off {
@@ -382,4 +386,182 @@ main section#form .formIn{
       opacity: 1;
       transform: translateY(0);
   }
+}
+
+
+
+/* SP
+=========================================================*/
+
+@media (max-width: 480px){
+
+  /* reset */
+  header .headerIn h1,
+  header h2,
+  html header .headerIn,
+  html main section,
+  main section .under_rank dl dt h4,
+  main section .under_rank dl dt p,
+  main section .under_rank dl dd{
+    width: auto;
+  }
+
+  main,header,footer{ overflow: hidden;}
+
+  /* header{ display: none;}
+  main{ display: none;}
+  footer{ display: none;} */
+
+
+  /* body */
+  html,body{
+    background: #000 url(../img/bg_daimon2.png) no-repeat center bottom,url(../img/bg.png) repeat left top;
+    background-size: 90%,200px;
+    background-attachment: fixed,fixed;
+  }
+  
+  body:after{
+    display: none;
+    right: -40px;
+    bottom: 220px;
+    background: url(../img/bg_baloon_2.png) no-repeat left top;
+    background-size: 310px;
+    width: 310px;
+    height: 238px;
+  }
+
+
+  /* header */
+  html header{
+    margin-bottom: 200px;
+  }
+
+  html header .headerIn{
+    margin-bottom: 100px;
+  }
+  html header .headerIn h1{
+    height: auto;
+    display: block;
+    padding-top: 100px;
+    padding-bottom: 200px;
+  }
+
+  html header .headerIn img{
+    height: 350px;
+  }
+
+  html header h2{
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin: 0;
+    padding: 30px 0;
+  }
+
+  header h2 p:before{
+    top: 50%;
+    left: -40px;
+    margin-top: -20px;
+    background: url(../img/icon_rank_w.svg) no-repeat center;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+
+  }
+  
+  header h2 p:after{
+    top: 50%;
+    right: -40px;
+    margin-top: -20px;
+    background: url(../img/icon_rank_w.svg) no-repeat center;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+
+  /* footer */
+  html footer{
+    line-height: 1.6rem;
+    width: 100%;
+    text-align: center;
+    padding: 50px 10px;
+    background: rgb(45 32 6);
+  }
+
+  html footer br{
+    display: block;
+  }
+
+
+  /* main */
+  html main section{
+    padding:0 20px;
+  }
+
+  html main section h3{
+    font-size: 2.53rem;
+    line-height: 3rem;
+    height: auto;
+    width: 50px;
+    position: relative;
+    font-weight: 200;
+    margin: 0 auto 100px;
+  }
+
+  html main section h3:before{
+    left: 30px;
+    bottom: -40px;
+  }
+
+  html main section .top3{
+    display: block;
+  }
+
+  html main section .top3 dl.ranking{
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  html main section .under_rank{
+    padding: 10px;
+  }
+
+  html main section .under_rank dl dt{
+    display: block;
+    width: 70%;
+  }
+
+  main section .under_rank dl dt h4{
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  main section .under_rank dl dt p{
+    font-size: 1rem;
+  }
+
+  html main section .under_rank dl dd{
+    width: 30%;
+    font-size: 1rem;
+    padding-top: 15px;
+  }
+
+
+  /* comment */
+  html main section#comment p{
+    padding:35px 0;
+    font-size: 1rem;
+  }
+
+
+  /* form */
+  html main section#form{
+    margin-bottom: 200px;
+  }
+
+  html main section#form .formIn iframe{
+    width: 100%;
+  }
+
 }
