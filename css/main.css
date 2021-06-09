@@ -74,7 +74,7 @@ header .headerIn{
 
 header .headerIn h1{
   width: 1200px;
-  height: 800px;
+  height: 900px;
   color: #fff;
   display: table-cell;
   vertical-align: middle;
@@ -261,13 +261,13 @@ main section .top3 dl.ranking dd{
 
 /* under rank */
 
-main section .under_rank{
+main section .low_rank{
   background: #fff url(../img/bg_rank.jpg) repeat left top;
   border-radius: 5px;
   padding: 70px;
 }
 
-main section .under_rank dl{
+main section .low_rank dl{
   display: flex;
   padding: 30px 30px 30px 100px;
   font-size: 1.2rem;
@@ -275,11 +275,11 @@ main section .under_rank dl{
   position: relative;
 }
 
-main section .under_rank dl:last-child{
+main section .low_rank dl:last-child{
   border-bottom: none;
 }
 
-main section .under_rank dl:before{
+main section .low_rank dl:before{
   font-size: 1.1rem;
   color: #fff;
   display: block;
@@ -295,34 +295,34 @@ main section .under_rank dl:before{
   box-sizing: border-box;
 }
 
-main section .under_rank dl dt{
+main section .low_rank dl dt{
   text-align: left;
   display: flex;
 }
 
-main section .under_rank dl dt h4{
+main section .low_rank dl dt h4{
   width: 400px;
 }
 
-main section .under_rank dl dt p{
+main section .low_rank dl dt p{
   width: 200px;
 }
 
-main section .under_rank dl dd{
+main section .low_rank dl dd{
   width: 200px;
   font-size: 1.3rem;
 }
 
-main section .under_rank dl:nth-child(odd){
+main section .low_rank dl:nth-child(odd){
   background: transparent;
 }
 
-main section .under_rank dl:nth-child(even){
+main section .low_rank dl:nth-child(even){
   background: transparent;
   /* background: rgba(204,204,204,.9); */
 }
 
-main section .under_rank dl dt{
+main section .low_rank dl dt{
   
 }
 
@@ -357,6 +357,10 @@ main section#form .formIn{
   position: relative;
   background: #fff url(../img/bg_rank.jpg) repeat left top;
   border-radius: 5px;
+}
+
+html main section#form .formIn p{
+  margin-bottom: 10px;
 }
 
 
@@ -400,9 +404,9 @@ main section#form .formIn{
   header h2,
   html header .headerIn,
   html main section,
-  main section .under_rank dl dt h4,
-  main section .under_rank dl dt p,
-  main section .under_rank dl dd{
+  main section .low_rank dl dt h4,
+  main section .low_rank dl dt p,
+  main section .low_rank dl dd{
     width: auto;
   }
 
@@ -523,25 +527,25 @@ main section#form .formIn{
     margin-bottom: 30px;
   }
 
-  html main section .under_rank{
+  html main section .low_rank{
     padding: 10px;
   }
 
-  html main section .under_rank dl dt{
+  html main section .low_rank dl dt{
     display: block;
     width: 70%;
   }
 
-  main section .under_rank dl dt h4{
+  main section .low_rank dl dt h4{
     font-size: 1rem;
     margin-bottom: 10px;
   }
 
-  main section .under_rank dl dt p{
+  main section .low_rank dl dt p{
     font-size: 1rem;
   }
 
-  html main section .under_rank dl dd{
+  html main section .low_rank dl dd{
     width: 30%;
     font-size: 1rem;
     padding-top: 15px;
@@ -562,6 +566,10 @@ main section#form .formIn{
 
   html main section#form .formIn iframe{
     width: 100%;
+  }
+
+  html main section#form .formIn p{
+    padding: 0 15px;
   }
 
 }
