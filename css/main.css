@@ -189,12 +189,9 @@ main section h3:before{
   z-index: 3;
 }
 
-main section dl:before {
+main section#rank dl:before{
   counter-increment: number 1;
   content: counter(number) "位";
-}
-
-main section#rank{
 }
 
 main section#rank .rankIn{
@@ -353,14 +350,119 @@ main section#form{
 main section#form .formIn{
   text-align: center;
   margin: 0 auto;
-  padding: 80px 0 50px;
+  padding: 80px 50px 50px;
   position: relative;
   background: #fff url(../img/bg_rank.jpg) repeat left top;
   border-radius: 5px;
 }
 
-html main section#form .formIn p{
-  margin-bottom: 10px;
+main section#form .formIn p{
+  margin-bottom: 40px;
+}
+
+main section#form .formIn dl{
+  display: flex;
+  margin-bottom: 30px;
+}
+
+main section#form .formIn form{
+  width: 650px;
+  margin: 0 auto ;
+}
+
+main section#form .formIn dl label{
+  font-size: 1.5rem;
+}
+
+main section#form .formIn dl dt{
+  width: 20%;
+  text-align: left;
+  padding-top: 14px;
+}
+
+main section#form .formIn dl dd{
+  width: 80%;
+  text-align: left;
+}
+
+main section#form .formIn dl select,
+main section#form .formIn dl textarea{
+  width: 100%;
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  padding: 15px;
+}
+
+main section#form .formIn .outline{
+ text-align: left;
+ width: 800px;
+ /* border: 1px solid rgba(20, 20, 20, 0.2); */
+ background: rgb(49,108,140,.1);
+ padding: 30px;
+ margin:0 auto 60px;
+}
+
+main section#form .formIn .outline h4{
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+main section#form .formIn .outline ul li{
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  position: relative
+}
+
+main section#form .formIn .outline li.underline{
+  text-decoration:underline;
+}
+
+main section#form .formIn .outline ul li:before{
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  background: url(../img/icon_rank.svg) no-repeat center;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-bottom: -3px;
+}
+
+main section#form .formIn button {
+  border-radius: 0;
+  display: inline-block;
+  position: relative;
+  padding: 15px 40px;
+  font-size: 1.4rem;
+  margin: 30px 0;
+}
+
+main section#form .formIn button:before,
+main section#form .formIn button:after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  content: '';
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background: rgba(20, 20, 20, 0.6);;
+}
+
+main section#form .formIn button:before {
+  top: 0;
+  left: 0;
+}
+
+main section#form .formIn button:after {
+  right: 0;
+  bottom: 0;
+}
+
+main section#form .formIn button:hover:before,
+main section#form .formIn button:hover:after {
+  width: 0;
 }
 
 
@@ -564,12 +666,56 @@ html main section#form .formIn p{
     margin-bottom: 200px;
   }
 
-  html main section#form .formIn iframe{
-    width: 100%;
+  html main section#form .formIn{
+    padding: 40px 30px;
   }
 
   html main section#form .formIn p{
-    padding: 0 15px;
+    margin-bottom: 20px;
   }
+
+  html main section#form .formIn .outline{
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+  html main section#form .formIn .outline ul li{
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  html main section#form .formIn .outline ul li:before {
+    text-align: center;
+    margin: 0 auto 15px;
+    display: block;
+  }
+
+  main section#form .formIn form{
+    width: auto;
+  }
+
+  html main section#form .formIn dl{
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  html main section#form .formIn dl dt,
+  html main section#form .formIn dl dd{
+    width: auto;
+  }
+
+  html main section#form .formIn dl select,
+  html main section#form .formIn dl textarea{
+    padding: 10px;
+  }
+
+  html main section#form .formIn dl dt{
+    margin-bottom: 10px;
+  }
+
+  html main section#form .formIn dl label{
+    font-size: 1.1rem;
+  }
+
 
 }

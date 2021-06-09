@@ -56,10 +56,60 @@
         <section id="form" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
           <h3>投票所</h3>
           <div class="formIn fade fade_off">
+            <div class="outline">
+              <h4>企画概要</h4>
+              <ul>
+                <li>会長が歌う曲のなかから、好きな曲を3つ選択して投票してください。</li>
+                <li>投票は1日1回。24時間経過で再投票が可能となります。</li>
+                <li class="underline">トップ10位になった曲をオリジナルアルバムとして作成します。</li>
+                <li>募集期間：2021年6月12日〜17日</li>
+              </ul>
+            </div>
             <p>いただいたコメントは運営チェックのうえ表示されますので、ご安心ください。</p>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJIoErY7HCYFly2-naPD8YwSMQ9_Tej5EYDhOxVkV5i-oEkg/viewform?embedded=true" width="800" height="600" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-          </div>
-
+            <form>
+              <dl>
+                <dt><label for="songlist" class="form-label">1曲目</label></dt>
+                <dd>
+                  <select id="songlist" class="form-select" name="songlist">
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                  </select>
+                </dd>
+              </dl>
+              <dl>
+                <dt><label for="songlist" class="form-label">2曲目</label></dt>
+                <dd>
+                  <select id="songlist" class="form-select" name="songlist">
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                  </select>
+                </dd>
+              </dl>
+              <dl>
+                <dt><label for="songlist" class="form-label">3曲目</label></dt>
+                <dd>
+                  <select id="songlist" class="form-select" name="songlist">
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                    <option value="test">test</option>
+                  </select>
+                </dd>
+              </dl>
+              <dl>
+                <dt><label for="comment" class="form-label">コメント</label></dt>
+                <dd><textarea class="form-control" id="comment" name="comment" rows="10"></textarea></dd>
+              </dl>
+              <button type="submit" class="btn btn-primary">投票する</button>
+            </form>
+          </div> 
         </section>
   
       </main>

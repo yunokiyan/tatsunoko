@@ -24,7 +24,6 @@ $(function() {
   },timeout);
   fade_on();
   request_rank();
-  request_comments();
 });
 
 function fade_on(){
@@ -92,6 +91,7 @@ function request_rank(){
 
         $low_rank.append(str);
       });
+      request_comments();
 
     }
   })

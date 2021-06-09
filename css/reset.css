@@ -424,7 +424,7 @@ textarea {
  */
 
 label[for] {
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /* Interactive */
