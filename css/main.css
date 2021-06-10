@@ -668,6 +668,18 @@ main section#form .formIn button:hover:after {
     margin-bottom: 30px;
   }
 
+  main section#rank .top3 dl:after{
+    padding: 3px 0px 3px 30px;
+    content: "View Youtube";
+    color: #333;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    background: url(../img/youtube.svg) no-repeat left 1px top 2px;
+    background-size: 20px;
+  }
+
   html main section .low_rank{
     padding: 10px;
   }
@@ -690,6 +702,10 @@ main section#form .formIn button:hover:after {
     width: 30%;
     font-size: 1rem;
     padding-top: 15px;
+  }
+
+  main section#rank .low_rank dl:hover:after{
+    display: none;
   }
 
 
