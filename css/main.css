@@ -189,6 +189,11 @@ main section h3:before{
   z-index: 3;
 }
 
+main section#rank dl{
+  cursor: pointer;
+  position: relative;
+}
+
 main section#rank dl:before{
   counter-increment: number 1;
   content: counter(number) "位";
@@ -205,6 +210,25 @@ main section .top3{
   justify-content: center;
   margin-bottom: 50px;
 }
+
+main section#rank .top3 dl:hover{
+  color: #2d57a3;
+}
+
+main section#rank .top3 dl:hover:after{
+  /* border-top: 1px solid rgba(20, 20, 20, 0.2);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.2); */
+  padding: 3px 0px 3px 30px;
+  content: "View Youtube";
+  color: #333;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+  background: url(../img/youtube.svg) no-repeat left 1px top 2px;
+  background-size: 20px;
+}
+
 
 main section .top3 dl:before{
   font-size: 1.8rem;
@@ -268,8 +292,23 @@ main section .low_rank dl{
   display: flex;
   padding: 30px 30px 30px 100px;
   font-size: 1.2rem;
-  border-bottom: 1px solid rgba(20, 20, 20, 0.2);
+  border-bottom: 1px solid rgba(20, 60, 105, 0.2);
   position: relative;
+}
+
+main section#rank .low_rank dl:hover{
+  background: rgba(20, 20, 20, 0.1);
+}
+
+main section#rank .low_rank dl:hover:after{
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+  background: url(../img/youtube.svg) no-repeat left top;
+  background-size: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 main section .low_rank dl:last-child{

@@ -55,41 +55,45 @@ function request_rank(){
 		dataType: 'jsonp',
 		jsonpCallback: 'jsondata',
 		success: function(json){
+      json = return_sort(json);
+      //console.log(json);
       $.each(json,function(i,val){
-        if(val.rank<=20){
-          (val.rank<=3)? RANKS_HIGH.push(val):RANKS_LOW.push(val);
+        if(i<20&&val.rank<=20){
+          (i<3)? RANKS_HIGH.push(val):RANKS_LOW.push(val);
         }
       });
-      return_sort(RANKS_HIGH);
-      return_sort(RANKS_LOW);
       
       var $high_rank = $(".top3");
       var $low_rank = $(".low_rank");
 
       $.each(RANKS_HIGH,function(i,val){
         var str = "";
-        str += '<dl class="ranking">';
         str += '<dd>'+comma(val.count)+'票</dd>';
         str += '<dt>';
         str += '<h4>'+val.title+'</h4>';
         str += '<p>'+val.artist+'</p>';
         str += '</dt>';
-        str += '</dl>';
 
-        $high_rank.append(str);
+        var $dl = $("<dl>").addClass("ranking").append(str).on("click",function(){
+          open( val.url, "_blank" ) ;
+        });
+
+        $high_rank.append($dl);
       });
 
       $.each(RANKS_LOW,function(i,val){
         var str = "";
-        str += '<dl class="ranking fade fade_off">';
         str += '<dt>';
         str += '<h4>'+val.title+'</h4>';
         str += '<p>'+val.artist+'</p>';
         str += '</dt>';
         str += '<dd>'+comma(val.count)+'票</dd>';
-        str += '</dl>';
 
-        $low_rank.append(str);
+        var $dl = $("<dl>").addClass("ranking fade fade_off").append(str).on("click",function(){
+          open( val.url, "_blank" ) ;
+        });
+
+        $low_rank.append($dl);
       });
       request_comments();
 
@@ -110,6 +114,10 @@ function request_comments(){
       var $commentIn = $(".commentIn");
       
       $.each(COMMENT,function(i,val){
+        if(val.number==0){
+          $("#comment").hide();
+          return false;
+        }
         var str = "";
         str += '<p class="fade fade_off">'+val.comment+'</p>';
         $commentIn.append(str);
@@ -126,7 +134,7 @@ getter/setter
 //　並び替え
 function return_sort(v){
   return v.sort(function(a, b) {
-    if (a.rank > b.rank) {
+    if (a.count < b.count) {
       return 1;
     } else {
       return -1;
