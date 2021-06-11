@@ -2,6 +2,7 @@ var rellax = new Rellax('.js-rellax');
 var API_RANK = "https://script.google.com/macros/s/AKfycbyThDKNS2BPdBXFP9Q5oYg3iOWQFqtEcvxzWM49w62s_P6v3u0b/exec";
 var API_COMMENT = "https://script.google.com/macros/s/AKfycbwDIV8Dft3RpEvoUYaut8zF87oYTRAoAUcGmXOxiKfh6r3qFk3k/exec";
 
+var RANKING = [];
 var RANKS_HIGH = [];
 var RANKS_LOW = [];
 var COMMENT = [];
@@ -42,7 +43,6 @@ function fade_on(){
 }
 
 
-
 /*======================================
 リクエストと生成
 ======================================*/
@@ -55,6 +55,7 @@ function request_rank(){
 		dataType: 'jsonp',
 		jsonpCallback: 'jsondata',
 		success: function(json){
+      jQuery.extend(true, RANKING, json)
       json = return_sort(json);
       //console.log(json);
       $.each(json,function(i,val){
@@ -75,7 +76,7 @@ function request_rank(){
         str += '</dt>';
 
         var $dl = $("<dl>").addClass("ranking").append(str).on("click",function(){
-          open( val.url, "_blank" ) ;
+          if(val.url.length > 0) open( val.url, "_blank" );
         });
 
         $high_rank.append($dl);
@@ -96,7 +97,7 @@ function request_rank(){
         $low_rank.append($dl);
       });
       request_comments();
-
+      request_form();
     }
   })
 }
@@ -126,6 +127,65 @@ function request_comments(){
   })
 }
 
+
+// フォーム
+function request_form(){
+  var canAjax = true;
+  var item = "";
+  $.each(RANKING,function(i,val){
+    if(i==0) item += '<option value=""></option>';
+    item += '<option value="'+val.title+'">'+val.title+'</option>';
+  });
+
+  $("#songlist01,#songlist02,#songlist03").html(item);
+  $("#songlist01,#songlist02,#songlist03").flexselect();
+  $("#songlist01_flexselect,#songlist02_flexselect,#songlist03_flexselect").val("").attr("placeholder","曲を選択・入力してください");
+
+  $("#songlist01_flexselect,#songlist02_flexselect,#songlist03_flexselect").css({
+      "width":"100%",
+      "border":"1px solid rgba(20,20,20,.2)",
+      "padding":"15px"
+    }
+  );
+
+  $('#voteform').submit(function (event) {
+    var sl01 = $("#songlist01_flexselect").val();
+    var sl02 = $("#songlist02_flexselect").val();
+    var sl03 = $("#songlist03_flexselect").val();
+    event.preventDefault();
+    if (sl01 == "" || sl02 == "" || sl03 == "") {
+      alert("楽曲を選択してください。");
+      return;
+    }
+    var $form = $(this);
+    if (!canAjax) {
+      console.log('通信中');
+      return;
+    }
+    canAjax = false;
+    $.ajax({
+      url: $form.attr('action'),
+      type: $form.attr('method'),
+      data: $form.serialize()
+    })
+      .done(function (item) {
+        if (item == 0) {
+          if (!alert("投票ありがとうございました！")) {
+            location.reload();
+          }
+        } else if (item == 1) {
+          alert("投票は１日１回までです。");
+        } else {
+          alert("投票内容にエラーがあります。");
+        }
+      })
+      .fail(function () {
+        console.log("falt");
+      }).always(function () {
+        canAjax = true;
+      });
+  });
+}
 
 /*======================================
 getter/setter

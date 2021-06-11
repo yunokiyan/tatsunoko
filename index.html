@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="jp">
   <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T9WNFS4');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -22,119 +30,114 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/loaders.css" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/flexselect.css" />
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-  </head>
-  <body>
-    
-    <div class="loader"><div class="ball-scale"><div></div></div></div>
-    <canvas id="projector"></canvas>
-    <div id="wrapper" class="fade_off">
-      <header>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9WNFS4"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-        <div class="headerIn">
-          <h1 class="js-rellax" data-rellax-speed="0" data-rellax-zindex="2">
-            <img src="img/h1_title.png" width="auto" height="800" alt="たつのこセレクション">
-          </h1>
-        </div>
-        
-        <h2  class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
-          <p>あなたが好きな歌に、<br>一日一回の投票。</p>
-        </h2>
-  
-      </header>
-  
-      <main>
-        <section id="rank" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
-          <div class="rankIn">
-            <h3>現在の順位</h3>
-            <div class="top3 fade fade_off"></div>
-            <div class="low_rank"></div>
-          </div>
-        </section>
-  
-        <section id="comment" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
-          <h3>コメント</h3>
-          <div class="commentIn"></div>
-        </section>
-
-        <section id="form" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
-          <h3>投票所</h3>
-          <div class="formIn fade fade_off">
-            <div class="outline">
-              <h4>企画概要</h4>
-              <ul>
-                <li>会長が歌う曲のなかから、好きな曲を3つ選択して投票してください。</li>
-                <li>投票は1日1回。24時間経過で再投票が可能となります。</li>
-                <li class="underline">トップ10位になった曲をオリジナルアルバムとして作成します。</li>
-                <li>募集期間：2021年6月12日〜17日</li>
-              </ul>
-            </div>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            <p>いただいたコメントは運営チェックのうえ表示されますので、ご安心ください。</p>
-            <form>
-              <dl>
-                <dt><label for="songlist" class="form-label">1曲目</label></dt>
-                <dd>
-                  <select id="songlist" class="form-select" name="songlist">
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                  </select>
-                </dd>
-              </dl>
-              <dl>
-                <dt><label for="songlist" class="form-label">2曲目</label></dt>
-                <dd>
-                  <select id="songlist" class="form-select" name="songlist">
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                  </select>
-                </dd>
-              </dl>
-              <dl>
-                <dt><label for="songlist" class="form-label">3曲目</label></dt>
-                <dd>
-                  <select id="songlist" class="form-select" name="songlist">
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                    <option value="test">test</option>
-                  </select>
-                </dd>
-              </dl>
-              <dl>
-                <dt><label for="comment" class="form-label">コメント</label></dt>
-                <dd><textarea class="form-control" id="comment" name="comment" rows="10"></textarea></dd>
-              </dl>
-              <button type="submit" class="btn btn-primary">投票する</button>
-            </form>
-          </div> 
-        </section>
-  
-      </main>
-  
-      <footer>
-        <p class="text-center copyright">Copyright © たつのこセレクション <br>Design: yukiyuki_amano</p>
-      </footer>
+  <div class="loader">
+    <div class="ball-scale">
+      <div></div>
     </div>
+  </div>
+  <canvas id="projector"></canvas>
+  <div id="wrapper" class="fade_off">
+    <header>
 
-    <script src="https://code.createjs.com/easeljs-0.7.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="js/background.js"></script>
-    <script src="js/rellax.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+      <div class="headerIn">
+        <h1 class="js-rellax" data-rellax-speed="0" data-rellax-zindex="2">
+          <img src="img/h1_title.png" width="auto" height="800" alt="たつのこセレクション">
+        </h1>
+      </div>
+
+      <h2 class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
+        <p>あなたが好きな歌に、<br>一日一回の投票。</p>
+      </h2>
+
+    </header>
+
+    <main>
+      <section id="rank" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
+        <div class="rankIn">
+          <h3>現在の順位</h3>
+          <div class="top3 fade fade_off"></div>
+          <div class="low_rank"></div>
+        </div>
+      </section>
+
+      <section id="comment" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
+        <h3>コメント</h3>
+        <div class="commentIn"></div>
+      </section>
+
+      <section id="form" class="js-rellax fade fade_off" data-rellax-speed="0" data-rellax-zindex="2">
+        <h3>投票所</h3>
+        <div class="formIn fade fade_off">
+          <div class="outline">
+            <h4>企画概要</h4>
+            <ul>
+              <li>会長が歌う曲のなかから、好きな曲を3つ選択して投票してください。</li>
+              <li>投票は1日1回。24時間経過で再投票が可能となります。</li>
+              <li class="underline">トップ10位になった曲をオリジナルアルバムとして作成します。</li>
+              <li>募集期間：2021年6月11日〜17日</li>
+            </ul>
+          </div>
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <p>いただいたコメントは運営チェックのうえ表示されますので、ご安心ください。<br><br>会長が過去に歌った曲を確認したい場合は下記のサイトに全アーカイブを掲載しています。
+            <br><a href="http://holosite.me/song/?t=coco" target="_blank">ホロライブ歌まとめ-推しのセトリ-：http://holosite.me/song/?t=coco</a></p>
+          <form id="voteform" action="./vote.php" method="post">
+            <dl>
+              <dt><label for="songlist01" class="form-label">1曲目</label></dt>
+              <dd>
+                <select id="songlist01" class="form-select flexselect" name="songlist01" value=""></select>
+              </dd>
+            </dl>
+            <dl>
+              <dt><label for="songlist02" class="form-label">2曲目</label></dt>
+              <dd>
+                <select id="songlist02" class="form-select flexselect" name="songlist02" value=""></select>
+              </dd>
+            </dl>
+            <dl>
+              <dt><label for="songlist03" class="form-label">3曲目</label></dt>
+              <dd>
+                <select id="songlist03" class="form-select flexselect" name="songlist03" value=""></select>
+              </dd>
+            </dl>
+            <dl>
+              <dt><label for="comment" class="form-label">コメント</label></dt>
+              <dd><textarea class="form-control" id="comment" name="comment" rows="10"></textarea></dd>
+            </dl>
+            <button type="submit" class="btn btn-primary">投票する</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p class="text-center copyright">Copyright © たつのこセレクション <br>Design: yukiyuki_amano</p>
+    </footer>
+  </div>
+
+  <script src="https://code.createjs.com/easeljs-0.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/rellax.min.js"></script>
+  <script src="js/liquidmetal.js"></script>
+  <script src="js/jquery.flexselect.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
