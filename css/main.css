@@ -511,6 +511,12 @@ main section#form .formIn button:hover:after {
   width: 0;
 }
 
+main section#form .formIn h4.finish{
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 50px 0;
+}
+
 
 /* Javascript
 =========================================================*/
@@ -779,6 +785,11 @@ main section#form .formIn button:hover:after {
 
   html main section#form .formIn dl label{
     font-size: 1.1rem;
+  }
+
+  html main section#form .formIn h4.finish{
+    font-size: 1.6rem;
+    padding: 25px 0;
   }
 
 
