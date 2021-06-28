@@ -1,5 +1,5 @@
 var rellax = new Rellax('.js-rellax');
-var API_RANK = "https://script.google.com/macros/s/AKfycbyThDKNS2BPdBXFP9Q5oYg3iOWQFqtEcvxzWM49w62s_P6v3u0b/exec";
+var API_RANK = "https://script.google.com/macros/s/AKfycbyw1fZwRPEAvlqMxsE6U1BVzl-zsbEXJkJ7HRas7SaooNE2xg/exec";
 var API_COMMENT = "https://script.google.com/macros/s/AKfycbwDIV8Dft3RpEvoUYaut8zF87oYTRAoAUcGmXOxiKfh6r3qFk3k/exec";
 
 var RANKING = [];
@@ -59,18 +59,14 @@ function request_rank(){
       json = return_sort(json);
       //console.log(json);
       $.each(json,function(i,val){
-        if(i<20&&val.rank<=20){
-          (i<3)? RANKS_HIGH.push(val):RANKS_LOW.push(val);
-        }
-      });
-      
-      var $high_rank = $(".top3");
-      var $low_rank = $(".low_rank");
+        // if(i<20&&val.rank<=20){
+        //   (i<3)? RANKS_HIGH.push(val):RANKS_LOW.push(val);
+        // }
 
-      $.each(RANKS_HIGH,function(i,val){
         var str = "";
         str += '<dd>'+comma(val.count)+'票</dd>';
         str += '<dt>';
+        str += '<span>'+(i+1)+'位</span>'
         str += '<h4>'+val.title+'</h4>';
         str += '<p>'+val.artist+'</p>';
         str += '</dt>';
@@ -79,23 +75,52 @@ function request_rank(){
           if(val.url.length > 0) open( val.url, "_blank" );
         });
 
-        $high_rank.append($dl);
+        if(i<10){
+          $(".top3").append($dl);
+          if(!val.status) $(".top3").hide();
+        }else if(i<20){
+          $(".top20").append($dl);
+          if(!val.status) $(".top20").hide();
+        }else{
+          $(".top30").append($dl);
+          if(!val.status) $(".top30").hide();
+        }
+
       });
+      
+      // var $high_rank = $(".top3");
+      // var $low_rank = $(".low_rank");
 
-      $.each(RANKS_LOW,function(i,val){
-        var str = "";
-        str += '<dt>';
-        str += '<h4>'+val.title+'</h4>';
-        str += '<p>'+val.artist+'</p>';
-        str += '</dt>';
-        str += '<dd>'+comma(val.count)+'票</dd>';
 
-        var $dl = $("<dl>").addClass("ranking fade fade_off").append(str).on("click",function(){
-          open( val.url, "_blank" ) ;
-        });
+      // $.each(RANKS_HIGH,function(i,val){
+      //   var str = "";
+      //   str += '<dd>'+comma(val.count)+'票</dd>';
+      //   str += '<dt>';
+      //   str += '<h4>'+val.title+'</h4>';
+      //   str += '<p>'+val.artist+'</p>';
+      //   str += '</dt>';
 
-        $low_rank.append($dl);
-      });
+      //   var $dl = $("<dl>").addClass("ranking").append(str).on("click",function(){
+      //     if(val.url.length > 0) open( val.url, "_blank" );
+      //   });
+
+      //   $high_rank.append($dl);
+      // });
+
+      // $.each(RANKS_LOW,function(i,val){
+      //   var str = "";
+      //   str += '<dt>';
+      //   str += '<h4>'+val.title+'</h4>';
+      //   str += '<p>'+val.artist+'</p>';
+      //   str += '</dt>';
+      //   str += '<dd>'+comma(val.count)+'票</dd>';
+
+      //   var $dl = $("<dl>").addClass("ranking fade fade_off").append(str).on("click",function(){
+      //     open( val.url, "_blank" ) ;
+      //   });
+
+      //   $low_rank.append($dl);
+      // });
       request_comments();
       request_form();
     }

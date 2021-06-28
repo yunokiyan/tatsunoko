@@ -194,28 +194,58 @@ main section#rank dl{
   position: relative;
 }
 
-main section#rank dl:before{
+/* main section#rank dl:before{
   counter-increment: number 1;
   content: counter(number) "位";
-}
+} */
 
 main section#rank .rankIn{
   margin: 0px auto;
 }
 
-/* top3 */
-
-main section .top3{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+main section#rank .rankIn h5{
+  font-size: 2.4rem;
+  margin-bottom: 80px;
+  color: #fff;
+  font-family: 'Noto Serif JP', serif;
+  position: relative;
 }
 
-main section#rank .top3 dl:hover{
+main section#rank .rankIn h5::before{
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 37%;
+  height: 1px;
+  background: #fff;
+}
+
+main section#rank .rankIn h5::after{
+  content: "";
+  position: absolute;
+  top: 23px;
+  right: 0;
+  width: 37%;
+  height: 1px;
+  background: #fff;
+}
+
+
+/* top3 */
+
+main section div[class^="top"]{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+main section#rank div[class^="top"] dl:hover{
   color: #2d57a3;
 }
 
-main section#rank .top3 dl:hover:after{
+main section#rank div[class^="top"] dl:hover:after{
   /* border-top: 1px solid rgba(20, 20, 20, 0.2);
   border-bottom: 1px solid rgba(20, 20, 20, 0.2); */
   padding: 3px 0px 3px 30px;
@@ -229,8 +259,22 @@ main section#rank .top3 dl:hover:after{
   background-size: 20px;
 }
 
+/* main section div[class^="top"] dl:before{
+  font-size: 1.8rem;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: -25px;
+  left: -20px;
+  background: url(../img/icon_rank.svg) no-repeat center;
+  background-size: 90px 90px;
+  width: 90px;
+  height: 90px;
+  padding-top: 26px;
+  box-sizing: border-box;
+} */
 
-main section .top3 dl:before{
+main section div[class^="top"] dt span{
   font-size: 1.8rem;
   color: #fff;
   display: block;
@@ -245,34 +289,45 @@ main section .top3 dl:before{
   box-sizing: border-box;
 }
 
-main section .top3 dl.ranking{
+
+main section div[class^="top"] dl:first-child{
+  width: 100% !important;
+  margin-right: 0 !important;
+}
+
+main section div[class^="top"] dl:nth-child(3n+1){
+  margin-right: 0 !important;
+}
+
+main section div[class^="top"] dl.ranking{
   padding: 50px;
   margin-right: 50px;
+  margin-bottom: 50px;
   background: #fff url(../img/bg_rank.jpg) repeat left top;
   border-radius: 5px;
   position: relative;
-  width: 33%;
+  width: 30%;
 }
 
-main section .top3 dl.ranking:last-child{
+main section div[class^="top"] dl.ranking:last-child{
   margin-right: 0;
 }
 
-main section .top3 dl.ranking dt{
+main section div[class^="top"] dl.ranking dt{
   margin-bottom: 10px;
 }
 
-main section .top3 dl.ranking dt h4{
+main section div[class^="top"] dl.ranking dt h4{
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 20px;
 }
 
-main section .top3 dl.ranking dt p{
+main section div[class^="top"] dl.ranking dt p{
   font-size: 1rem;
 }
 
-main section .top3 dl.ranking dd{
+main section div[class^="top"] dl.ranking dd{
   font-size: 3rem;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -671,17 +726,17 @@ main section#form .formIn h4.finish{
     bottom: -40px;
   }
 
-  html main section .top3{
+  html main section div[class^="top"]{
     display: block;
   }
 
-  html main section .top3 dl.ranking{
+  html main section div[class^="top"] dl.ranking{
     width: 100%;
     margin-right: 0;
     margin-bottom: 30px;
   }
 
-  main section#rank .top3 dl:after{
+  main section#rank div[class^="top"] dl:after{
     padding: 3px 0px 3px 30px;
     content: "View Youtube";
     color: #333;
