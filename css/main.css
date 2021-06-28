@@ -777,6 +777,10 @@ main section#form .formIn h4.finish{
     display: none;
   }
 
+  main section#rank .rankIn h5::before,
+  main section#rank .rankIn h5::after{
+    width: 17%;
+  }
 
   /* comment */
   html main section#comment p{
